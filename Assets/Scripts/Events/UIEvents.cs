@@ -13,8 +13,6 @@ public class UIEvents : MonoBehaviour
 {
     public static UIEvents current;
 
-    
-
     void Awake()
     {
         current = this;
@@ -31,6 +29,13 @@ public class UIEvents : MonoBehaviour
     {
         if (onHealReceived != null) onHealReceived(heal);
     }
+
+    public event Action<int> onValueUpdated;
+    public void ValueUpdated(int ID)
+    {
+        if (onValueUpdated != null) onValueUpdated(ID);
+    }
+
 
     public event Action<TargetChangeDirection> onTargetChanged;
     public void TargetChanged(TargetChangeDirection direction)

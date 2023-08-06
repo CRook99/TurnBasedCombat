@@ -232,6 +232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e597e942120f6c47b3ab0db348fa035, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Portrait: {fileID: 6220909073904954447}
   HPSlider: {fileID: 5929589505191797821}
   MPSlider: {fileID: 5513963042630286240}
   Data: {fileID: 0}

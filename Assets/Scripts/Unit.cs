@@ -9,33 +9,35 @@ public enum UnitType {
 
 public abstract class Unit : MonoBehaviour
 {
+    public int ID { get; set; }
+
     [Header("====== Stats ======")]
-    public Stat AttackStat;
-    public Stat DefenceStat;
-    public Stat SpeedStat;
-    public UnitScriptableObject Stats;
+    [SerializeField] protected UnitScriptableObject _stats;
+    [SerializeField] Stat _attackStat;
+    [SerializeField] Stat _defenceStat;
+    [SerializeField] Stat _speedStat;
+
+    // Properties for access
+    public UnitScriptableObject Stats { get { return _stats; } }
+    public int Attack { get { return _attackStat.Value(); } }
+    public int Defence { get { return _defenceStat.Value(); } }
+    public int Speed { get { return _speedStat.Value(); } }
+
+    [Header("===== Gameplay =====")]
+    public int Health;
+    public List<SkillScriptableObject> Skills;
+    
     [Space]
 
     [Header("===== Camera =====")]
     public MeshRenderer meshRenderer; // TODO: Make MeshRenderer get automatically instead of manual reference in Unity
     public GameObject Core;
-
-
-    [Header("===== Gameplay =====")]
-    public int Health;
-    public int Mana;
-    //public UnitType Type;
-    public List<SkillScriptableObject> Skills;
-    public int ID;
     
-
-    void Awake() {
-        // Initialize gametime stats
-        Health = Stats.MaxHealth;
-        Mana = Stats.MaxMana;
-        AttackStat = new Stat(Stats.Attack);
-        DefenceStat = new Stat(Stats.Defence);
-        SpeedStat = new Stat(Stats.Speed);
+    protected void Awake() {
+        Health = _stats.MaxHealth;
+        _attackStat = new Stat(_stats.Attack);
+        _defenceStat = new Stat(_stats.Defence);
+        _speedStat = new Stat(_stats.Speed);
     }
 
     void Start() 
@@ -43,38 +45,26 @@ public abstract class Unit : MonoBehaviour
         
     }
 
-    
-
-    // TODO Implement enemy target mesh show
-    /*
-    public void SetMesh(Unit u)
+    void Update()
     {
-        if (Type == UnitType.Enemy) return; // Enemy visibility not affected by turn
-
-        meshRenderer.enabled = ID == u.ID;
+        
     }
-    */
+
     public abstract Transform GetDefaultCamTransform();
 
     public void ShowMesh() { meshRenderer.enabled = true; }
 
     public void HideMesh() { meshRenderer.enabled = false; }
 
-    public void TakeDamage(int dmg) 
+    public void HealthIncrease(int amount)
     {
-        Health -= dmg;
-        //UIEvents.current.DamageTaken(ID, dmg);
+        Health = Mathf.Clamp(Health + amount, 0, _stats.MaxHealth);
+        UIEvents.current.ValueUpdated(ID);
     }
 
-    public void ReceiveHeal(int heal)
+    public void HealthDecrease(int amount)
     {
-        Health += heal;
+        Health = Mathf.Clamp(Health - amount, 0, _stats.MaxHealth);
+        UIEvents.current.ValueUpdated(ID);
     }
-
-
-
-    public int Attack() { return AttackStat.Value(); }
-    public int Defence() { return DefenceStat.Value(); }
-    public int Speed() { return SpeedStat.Value(); }
-   
 }

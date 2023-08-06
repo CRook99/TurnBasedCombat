@@ -33,12 +33,6 @@ public class GameState : MonoBehaviour
         if (Input.GetKeyDown("t")) {
             TurnManager.current.EndTurn();
         }
-
-        // Buff test
-        if (Input.GetKeyDown("b")) {
-            TurnManager.current.CurrentUnit().AttackStat.AddMod(new StatModifier(25, StatModifierType.Flat));
-            Debug.Log(TurnManager.current.CurrentUnit().AttackStat.Value());
-        }
     }
 
     void Initialize()
@@ -59,6 +53,6 @@ public class GameState : MonoBehaviour
         }
 
         TurnManager.current.Initialize(ActiveAllies, ActiveEnemies);
-        UIManager.current.Initialize(ActiveAllies);
+        AllyUIManager.current.Initialize(ActiveAllies);
     }
 }

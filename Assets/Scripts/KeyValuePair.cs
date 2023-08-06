@@ -20,8 +20,8 @@ public class ID_Unit_Pair
 public class ID_Element_Pair
 {
     public int ID;
-    public UIUnitElement Element;
-    public ID_Element_Pair(int id, UIUnitElement element)
+    public AllyUIElement Element;
+    public ID_Element_Pair(int id, AllyUIElement element)
     {
         ID = id;
         Element = element;
