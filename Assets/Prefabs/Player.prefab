@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8648389976072839991}
   m_Layer: 0
   m_Name: Shoulder
-  m_TagString: Untagged
+  m_TagString: Shoulder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 2157130612467768911}
   m_Layer: 0
   m_Name: Focus
-  m_TagString: Untagged
+  m_TagString: Focus
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -167,7 +167,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7287666184173141015}
-  - component: {fileID: 8325084438174070855}
+  - component: {fileID: 8001781395959324069}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -192,7 +192,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 12.049, z: 0}
---- !u!114 &8325084438174070855
+--- !u!114 &8001781395959324069
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -201,7 +201,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7001445962565030779}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5e7914540ce5d64a8e7c87fc7138d0c, type: 3}
+  m_Script: {fileID: 11500000, guid: 3bb8c886bda5f54479b3fac745f904d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   AttackStat:
@@ -217,15 +217,14 @@ MonoBehaviour:
     _value: -1
     isDirty: 0
   Stats: {fileID: 11400000, guid: c6ec845de83f59844a45963ae1423e97, type: 2}
-  DefaultCam: {fileID: 3033559213956291011}
-  CameraTurntable: {fileID: 6655885838712472813}
   meshRenderer: {fileID: 6322200355651884855}
-  Core: {fileID: 0}
+  Core: {fileID: 4749171074680017702}
   Health: 0
   Mana: 0
-  Type: 0
   Skills: []
   ID: 0
+  _shoulderTransform: {fileID: 8648389976072839991}
+  _focusTransform: {fileID: 2157130612467768911}
 --- !u!1 &7755012135498598048
 GameObject:
   m_ObjectHideFlags: 0

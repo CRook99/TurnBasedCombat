@@ -7,7 +7,7 @@ public enum UnitType {
     Enemy,
 }
 
-public class Unit : MonoBehaviour
+public abstract class Unit : MonoBehaviour
 {
     [Header("====== Stats ======")]
     public Stat AttackStat;
@@ -17,23 +17,17 @@ public class Unit : MonoBehaviour
     [Space]
 
     [Header("===== Camera =====")]
-    public GameObject DefaultCam;
-    public GameObject CameraTurntable;
-    //public GameObject CamFocus;
     public MeshRenderer meshRenderer; // TODO: Make MeshRenderer get automatically instead of manual reference in Unity
-
     public GameObject Core;
 
 
     [Header("===== Gameplay =====")]
     public int Health;
     public int Mana;
-    public UnitType Type;
+    //public UnitType Type;
     public List<SkillScriptableObject> Skills;
     public int ID;
     
-
-
 
     void Awake() {
         // Initialize gametime stats
@@ -52,21 +46,19 @@ public class Unit : MonoBehaviour
     
 
     // TODO Implement enemy target mesh show
+    /*
     public void SetMesh(Unit u)
     {
         if (Type == UnitType.Enemy) return; // Enemy visibility not affected by turn
 
         meshRenderer.enabled = ID == u.ID;
     }
+    */
+    public abstract Transform GetDefaultCamTransform();
 
     public void ShowMesh() { meshRenderer.enabled = true; }
 
     public void HideMesh() { meshRenderer.enabled = false; }
-
-    public void UseSkill()
-    {
-
-    }
 
     public void TakeDamage(int dmg) 
     {

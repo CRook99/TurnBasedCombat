@@ -20,14 +20,14 @@ public class EnemyTurntable : MonoBehaviour
     void PointToActive()
     {
         Unit unit = TurnManager.current.CurrentUnit();
-        if (unit.Type != UnitType.Ally)
-        {
-            transform.rotation = Quaternion.Euler(transform.eulerAngles.x, 180, transform.eulerAngles.z);
-        }
-        else
+        if (unit is Ally)
         {
             Vector3 targetVector = new Vector3(unit.transform.position.x, transform.position.y, unit.transform.position.z);
             transform.LookAt(targetVector);
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(transform.eulerAngles.x, 180, transform.eulerAngles.z);
         }
     }
 }

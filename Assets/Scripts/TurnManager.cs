@@ -13,7 +13,7 @@ public class TurnManager : MonoBehaviour
         current = this;
     }
 
-    public void Initialize(List<Unit> allies, List<Unit> enemies) {
+    public void Initialize(List<Ally> allies, List<Enemy> enemies) {
         turns = new List<Unit>(allies).Concat(enemies).ToList(); // Put all units in turn list
         turns.Sort((x, y) => y.Speed().CompareTo(x.Speed())); // Reversed x,y = descending
 

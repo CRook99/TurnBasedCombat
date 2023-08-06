@@ -50,7 +50,7 @@ public class SelectorUIScript : MonoBehaviour
 
     void OnTurnBegin()
     {
-        if (TurnManager.current.CurrentUnit().Type == UnitType.Ally)
+        if (TurnManager.current.CurrentUnit() is Ally)
         {
             _outer.enabled = _inner.enabled = true;
             //ChangeTarget();

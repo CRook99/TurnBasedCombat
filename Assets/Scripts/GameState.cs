@@ -10,12 +10,12 @@ public class GameState : MonoBehaviour
 
     [Header("Allies")]
     [SerializeField] GameObject _alliesParent;
-    public List<Unit> ActiveAllies;
+    public List<Ally> ActiveAllies;
     
 
     [Header("Enemies")]
     [SerializeField] GameObject _enemiesParent;
-    public List<Unit> ActiveEnemies;
+    public List<Enemy> ActiveEnemies;
 
 
     void Awake()
@@ -44,12 +44,12 @@ public class GameState : MonoBehaviour
     void Initialize()
     {
         foreach (Transform child in _alliesParent.transform) {
-            ActiveAllies.Add(child.GetComponent<Unit>());
+            ActiveAllies.Add(child.GetComponent<Ally>());
             unitList.Add(child.GetComponent<Unit>());
         }
 
         foreach (Transform child in _enemiesParent.transform) {
-            ActiveEnemies.Add(child.GetComponent<Unit>());
+            ActiveEnemies.Add(child.GetComponent<Enemy>());
             unitList.Add(child.GetComponent<Unit>());
         }
 

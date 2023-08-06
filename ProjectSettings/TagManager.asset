@@ -8,6 +8,8 @@ TagManager:
   - HP
   - Outer
   - Inner
+  - Shoulder
+  - Focus
   layers:
   - Default
   - TransparentFX

@@ -16,10 +16,10 @@ public class UIUnitElement : MonoBehaviour
         //Portrait = transform.GetChild(0).GetComponent<Image>().sprite;
     }
 
-    public void Initialize(Unit unit)
+    public void Initialize(Ally ally)
     {
-        Data = unit.Stats;
-        //Portrait = unit.Stats.Portrait; // This next
+        Data = ally.Stats;
+        //Portrait = ally.Stats.Portrait; // This next
         transform.GetChild(0).GetComponent<Image>().sprite = Data.Portrait;
         HPSlider.maxValue = Data.MaxHealth;
         HPSlider.value = HPSlider.maxValue;

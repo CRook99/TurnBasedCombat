@@ -22,14 +22,9 @@ public class CameraManager : MonoBehaviour
         TurnEvents.current.onTurnBegin += OnTurnBegin;
     }
 
-    void Update()
-    {
-
-    }
-
     void OnTurnBegin() {
         _currentUnit = TurnManager.current.CurrentUnit();
-        Transform newTransform = _currentUnit.DefaultCam.transform;
+        Transform newTransform = _currentUnit.GetDefaultCamTransform();
         _cam.transform.SetPositionAndRotation(newTransform.position, newTransform.rotation);
 
     }
