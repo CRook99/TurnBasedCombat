@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SelectorScript : MonoBehaviour
+public class TargetingScript : MonoBehaviour
 {
     public int _targetIndex;
 

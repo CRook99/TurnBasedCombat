@@ -1091,7 +1091,7 @@ GameObject:
   - component: {fileID: 845666601}
   - component: {fileID: 845666602}
   m_Layer: 5
-  m_Name: Selector
+  m_Name: Cursor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1131,7 +1131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 874861b864fe77d43902629eae49161e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelectorScript: {fileID: 612743134}
+  TargetingScript: {fileID: 612743134}
   _outer: {fileID: 1020872589}
   _inner: {fileID: 174013532}
   _scaleCurve:

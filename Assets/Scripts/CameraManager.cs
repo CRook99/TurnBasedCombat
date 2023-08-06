@@ -5,7 +5,6 @@ using System.Linq;
 
 public class CameraManager : MonoBehaviour
 {
-    public static CameraManager current;
     Camera _cam;
 
     [Header("Position")]
@@ -13,7 +12,6 @@ public class CameraManager : MonoBehaviour
 
     void Awake() 
     {
-        current = this;
         _cam = GetComponentInChildren<Camera>();
     }
 
@@ -22,10 +20,9 @@ public class CameraManager : MonoBehaviour
         TurnEvents.current.onTurnBegin += OnTurnBegin;
     }
 
-    void OnTurnBegin() {
+    public void OnTurnBegin() {
         _currentUnit = TurnManager.current.CurrentUnit();
         Transform newTransform = _currentUnit.GetDefaultCamTransform();
         _cam.transform.SetPositionAndRotation(newTransform.position, newTransform.rotation);
-
     }
 }

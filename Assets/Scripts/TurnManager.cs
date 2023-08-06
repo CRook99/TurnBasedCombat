@@ -32,6 +32,7 @@ public class TurnManager : MonoBehaviour
         Unit temp = turns[0];
         turns.RemoveAt(0);
         turns.Add(temp);
+        TurnEvents.current.TurnEnd();
 
         BeginTurn();
     }

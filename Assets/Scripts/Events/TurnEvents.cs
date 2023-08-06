@@ -17,4 +17,10 @@ public class TurnEvents : MonoBehaviour
     {
         onTurnBegin?.Invoke();
     }
+
+    public event Action onTurnEnd;
+    public void TurnEnd()
+    {
+        onTurnEnd?.Invoke();
+    }
 }

@@ -7,7 +7,7 @@ public class EnemyTurntable : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        TurnEvents.current.onTurnBegin += PointToActive;
+        TurnEvents.current.onTurnEnd += PointToActive;
         PointToActive();
     }
 

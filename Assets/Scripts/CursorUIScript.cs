@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SelectorUIScript : MonoBehaviour
+public class CursorUIScript : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] SelectorScript SelectorScript;
+    [SerializeField] TargetingScript TargetingScript;
 
     [Header("Graphics")]
     [SerializeField] Image _outer;
@@ -23,15 +23,11 @@ public class SelectorUIScript : MonoBehaviour
     void Start()
     {
         UIEvents.current.onTargetChanged += ChangeTarget;
-        //UIEvents.current.onTargetChanged += ZoomSelector;
         TurnEvents.current.onTurnBegin += OnTurnBegin;
 
         _currentScale = _scaleCurve.Evaluate(0);
         _rect = GetComponent<RectTransform>();
-        //SelectorScript = GetComponent<SelectorScript>();
-
-        //ChangeTarget();
-        //ZoomSelector();
+        OnTurnBegin();
     }
 
 
@@ -71,7 +67,7 @@ public class SelectorUIScript : MonoBehaviour
 
     void MoveSelector()
     {
-        _targetPos = Camera.main.WorldToScreenPoint(GameState.current.ActiveEnemies[SelectorScript._targetIndex].Core.transform.position);
+        _targetPos = Camera.main.WorldToScreenPoint(GameState.current.ActiveEnemies[TargetingScript._targetIndex].Core.transform.position);
         
         transform.position = _targetPos;
     }
