@@ -9,7 +9,7 @@ public class AllyUIElement : MonoBehaviour
     [SerializeField] Slider HPSlider;
     [SerializeField] Slider MPSlider;
     //[SerializeField] UnitScriptableObject Data;
-    Ally ally;
+    Ally _ally;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +19,7 @@ public class AllyUIElement : MonoBehaviour
 
     public void Initialize(Ally ally)
     {
-        this.ally = ally;
+        _ally = ally;
         Portrait.sprite = ally.Stats.Portrait;
         HPSlider.value = HPSlider.maxValue = ally.Stats.MaxHealth;
         MPSlider.value = MPSlider.maxValue = ally.Stats.MaxMana;
@@ -33,7 +33,7 @@ public class AllyUIElement : MonoBehaviour
 
     public void UpdateSliderValues()
     {
-        HPSlider.value = ally.Health;
-        MPSlider.value = ally.Mana;
+        HPSlider.value = _ally.Health;
+        MPSlider.value = _ally.Mana;
     }
 }

@@ -12,15 +12,15 @@ public class TurnEvents : MonoBehaviour
         current = this;
     }
 
-    public event Action onTurnBegin;
+    public event Action OnTurnBegin;
     public void TurnBegin()
     {
-        onTurnBegin?.Invoke();
+        OnTurnBegin?.Invoke();
     }
 
-    public event Action onTurnEnd;
+    public event Action OnTurnEnd;
     public void TurnEnd()
     {
-        onTurnEnd?.Invoke();
+        OnTurnEnd?.Invoke();
     }
 }

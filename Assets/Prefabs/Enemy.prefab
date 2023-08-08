@@ -32,6 +32,37 @@ Transform:
   m_Father: {fileID: 2490640761056466862}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3261779725713451983
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 74869103938001363}
+  m_Layer: 0
+  m_Name: UIAnchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &74869103938001363
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3261779725713451983}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.51, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1108953384428051798}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6156463026131146990
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,7 +126,7 @@ Transform:
   - {fileID: 1108953384428051798}
   - {fileID: 5720734504626784443}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6714943603177918325
 MonoBehaviour:
@@ -109,26 +140,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a1c206126d12fa4a91eb9fc5d295047, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttackStat:
+  _stats: {fileID: 11400000, guid: 0741c0f80d97be049bffd6a33484bd2f, type: 2}
+  _attackStat:
     BaseValue: -1
     _value: -1
     isDirty: 0
-  DefenceStat:
+  _defenceStat:
     BaseValue: -1
     _value: -1
     isDirty: 0
-  SpeedStat:
+  _speedStat:
     BaseValue: -1
     _value: -1
     isDirty: 0
-  Stats: {fileID: 11400000, guid: 0741c0f80d97be049bffd6a33484bd2f, type: 2}
+  Health: 0
+  Skills: []
   meshRenderer: {fileID: 4254941759946753863}
   Core: {fileID: 6156463026131146990}
-  Health: 0
-  Mana: 0
-  Skills: []
-  ID: 0
   _focusTransform: {fileID: 5697743649995368007}
+  _UIAnchor: {fileID: 74869103938001363}
 --- !u!1 &7300946761882921127
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,6 +191,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1108271823959641013}
+  - {fileID: 74869103938001363}
   m_Father: {fileID: 2490640761056466862}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

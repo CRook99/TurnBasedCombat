@@ -12,15 +12,15 @@ public class ControlEvents : MonoBehaviour
         current = this;
     }
 
-    public event Action onCursorLeft;
+    public event Action OnCursorLeft;
     public void CursorLeft()
     {
-        onCursorLeft?.Invoke();
+        OnCursorLeft?.Invoke();
     }
 
-    public event Action onCursorRight;
+    public event Action OnCursorRight;
     public void CursorRight()
     {
-        onCursorRight?.Invoke();
+        OnCursorRight?.Invoke();
     }
 }

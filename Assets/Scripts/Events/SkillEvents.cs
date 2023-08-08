@@ -11,9 +11,9 @@ public class SkillEvents : MonoBehaviour
         current = this;
     }
 
-    public event Action onSkillUsed;
+    public event Action OnSkillUsed;
     public void SkillUsed() {
-        onSkillUsed?.Invoke();
+        OnSkillUsed?.Invoke();
     }
 
 }

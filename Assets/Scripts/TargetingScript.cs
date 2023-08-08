@@ -18,9 +18,9 @@ public class TargetingScript : MonoBehaviour
 
     void Start()
     {
-        ControlEvents.current.onCursorLeft += MoveLeft;
-        ControlEvents.current.onCursorRight += MoveRight;
-        TurnEvents.current.onTurnBegin += CheckValidTarget;
+        ControlEvents.current.OnCursorLeft += MoveLeft;
+        ControlEvents.current.OnCursorRight += MoveRight;
+        TurnEvents.current.OnTurnBegin += CheckValidTarget;
 
         _targetIndex = GameState.current.ActiveEnemies.Count / 2;
     }

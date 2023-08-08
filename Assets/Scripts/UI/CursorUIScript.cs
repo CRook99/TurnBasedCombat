@@ -22,8 +22,8 @@ public class CursorUIScript : MonoBehaviour
 
     void Start()
     {
-        UIEvents.current.onTargetChanged += ChangeTarget;
-        TurnEvents.current.onTurnBegin += OnTurnBegin;
+        UIEvents.current.OnTargetChanged += ChangeTarget;
+        TurnEvents.current.OnTurnBegin += OnTurnBegin;
 
         _currentScale = _scaleCurve.Evaluate(0);
         _rect = GetComponent<RectTransform>();

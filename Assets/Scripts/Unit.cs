@@ -56,15 +56,6 @@ public abstract class Unit : MonoBehaviour
 
     public void HideMesh() { meshRenderer.enabled = false; }
 
-    public void HealthIncrease(int amount)
-    {
-        Health = Mathf.Clamp(Health + amount, 0, _stats.MaxHealth);
-        UIEvents.current.ValueUpdated(ID);
-    }
-
-    public void HealthDecrease(int amount)
-    {
-        Health = Mathf.Clamp(Health - amount, 0, _stats.MaxHealth);
-        UIEvents.current.ValueUpdated(ID);
-    }
+    public abstract void HealthIncrease(int amount);
+    public abstract void HealthDecrease(int amount);
 }

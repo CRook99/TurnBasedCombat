@@ -54,5 +54,6 @@ public class GameState : MonoBehaviour
 
         TurnManager.current.Initialize(ActiveAllies, ActiveEnemies);
         AllyUIManager.current.Initialize(ActiveAllies);
+        EnemyUIManager.current.Initialize(ActiveEnemies);
     }
 }

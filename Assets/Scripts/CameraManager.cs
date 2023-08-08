@@ -12,12 +12,12 @@ public class CameraManager : MonoBehaviour
 
     void Awake() 
     {
-        _cam = GetComponentInChildren<Camera>();
+        _cam = Camera.main;
     }
 
     void Start()
     {
-        TurnEvents.current.onTurnBegin += OnTurnBegin;
+        TurnEvents.current.OnTurnBegin += OnTurnBegin;
     }
 
     public void OnTurnBegin() {

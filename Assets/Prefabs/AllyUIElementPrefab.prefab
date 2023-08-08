@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 6030992099542750163}
   - component: {fileID: 8471369465175873141}
   m_Layer: 5
-  m_Name: UnitUI
+  m_Name: AllyUIElementPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

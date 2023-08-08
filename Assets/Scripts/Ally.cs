@@ -16,16 +16,28 @@ public class Ally : Unit
         Mana = _stats.MaxMana;
     }
 
+    public override void HealthIncrease(int amount)
+    {
+        Health = Mathf.Clamp(Health + amount, 0, _stats.MaxHealth);
+        UIEvents.current.AllyValueUpdated(ID);
+    }
+
+    public override void HealthDecrease(int amount)
+    {
+        Health = Mathf.Clamp(Health - amount, 0, _stats.MaxHealth);
+        UIEvents.current.AllyValueUpdated(ID);
+    }
+
     public void ManaIncrease(int amount)
     {
         Mana = Mathf.Clamp(Mana + amount, 0, _stats.MaxMana);
-        UIEvents.current.ValueUpdated(ID);
+        UIEvents.current.AllyValueUpdated(ID);
     }
 
     public void ManaDecrease(int amount)
     {
         Mana = Mathf.Clamp(Mana + amount, 0, _stats.MaxMana);
-        UIEvents.current.ValueUpdated(ID);
+        UIEvents.current.AllyValueUpdated(ID);
     }
 
     public override Transform GetDefaultCamTransform()
