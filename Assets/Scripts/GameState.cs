@@ -17,6 +17,8 @@ public class GameState : MonoBehaviour
     [SerializeField] GameObject _enemiesParent;
     public List<Enemy> ActiveEnemies;
 
+    public GameObject SUEPrefab;
+
 
     void Awake()
     {

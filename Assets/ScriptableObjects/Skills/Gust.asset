@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e52c302c97f310d489081d87376c6876, type: 3}
-  m_Name: Hydroblast
+  m_Name: Gust
   m_EditorClassIdentifier: 
-  Name: Splash
+  Name: Gust
   Description: 
   Cost: 10
   Resource: 1
   Type: 0
-  Element: 2
+  Element: 4

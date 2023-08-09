@@ -8,16 +8,6 @@ public enum SkillType {
     Debuff,
 }
 
-public enum Element {
-    Physical,
-    Fire,
-    Water,
-    Electric,
-    Wind,
-    Spirit,
-    Void,
-    None,
-}
 
 public enum Resource {
     HP,
@@ -33,7 +23,7 @@ public class SkillScriptableObject : ScriptableObject
     public int Cost;
     public Resource Resource;
     public SkillType Type;
-    public Element Element;
+    public ElementScriptableObject Element;
 
     public virtual void Activate() {}
 }

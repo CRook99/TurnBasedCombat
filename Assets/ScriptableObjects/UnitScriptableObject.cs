@@ -9,6 +9,6 @@ public class UnitScriptableObject : ScriptableObject
     public int Attack;
     public int Defence;
     public int Speed;
-    public List<Element> Resistance;
+    public List<ElementName> Resistance;
     public Sprite Portrait;
 }
